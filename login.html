@@ -16,22 +16,21 @@
     </header>
     <main>
         <section class="login-sectie">
-            <div class="login-kaart">
+            <form class="login-kaart" action="login.php" method="POST">
                 <div class="login-vak">
                     <div class="login-veld">
                         <label>Email</label>
-                        <input type="email" name="email" placeholder="name@email.com" />
+                        <input type="email" name="email" placeholder="name@email.com" required>
                     </div>
                     <div class="login-veld">
                         <label>Wachtwoord</label>
-                        <input type="password" id="wachtwoord" name="wachtwoord" placeholder="Wachtwoord" />
-
+                        <input type="password" id="wachtwoord" name="wachtwoord" placeholder="Wachtwoord" required>
                     </div>
-                    <button class="continue-knop">
-                        <label>Verder</label>
+                    <button type="submit" class="continue-knop">
+                        Verder
                     </button>
                 </div>
-            </div>
+            </form>
         </section>
     </main>
     <footer>
