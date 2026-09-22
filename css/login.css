@@ -1,0 +1,76 @@
+body {
+    background-color: #F0F0F7;
+}
+
+.logo-img {
+    width: auto;
+    height: 100px;
+}
+
+.login-sectie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 48px;
+    padding-right: 16px;
+    padding-bottom: 48px;
+    padding-left: 16px;
+}
+
+.login-kaart {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.login-vak {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 48px;
+    padding-right: 16px;
+    padding-bottom: 48px;
+    padding-left: 16px;
+}
+
+.login-veld {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 19px;
+}
+
+.login-veld label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.login-veld input {
+    padding-top: 11px;
+    padding-right: 16px;
+    padding-bottom: 11px;
+    padding-left: 16px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.continue-knop {
+    background-color: #92CCE6;
+    width: 100%;
+    padding: 14px;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 24px;
+}
