@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $wachtwoord = $_POST['wachtwoord'] ?? '';
 
     if ($email != '' && $wachtwoord != '') {
+        $_SESSION['email'] = $email;
         $_SESSION['user'] = $email;
         header('Location: index.php');
         exit;

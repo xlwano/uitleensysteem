@@ -1,0 +1,47 @@
+services:
+  app:
+    build: .
+    container_name: uiteensysteem-app
+    depends_on:
+      - db
+    ports:
+      - "8090:80"
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    environment:
+      APP_ENV: development
+
+  db:
+    image: mysql:8.0
+    container_name: uitleensysteem-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: uitleensysteem
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: apppass
+      MYSQL_ROOT_PASSWORD: rootpass
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpass"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: uitleensysteem-phpmyadmin
+    depends_on:
+      - db
+    restart: unless-stopped
+    ports:
+      - "8085:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: rootpass
+
+volumes:
+  mysql_data:
