@@ -2,9 +2,14 @@
 session_start();
 include 'php/db.php';
 
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'docent') {
+    header('Location: login.php');
+    exit();
+}
+
 if (!isset($_SESSION['email'])) {
     header('Location: login.php');
-    exit;
+    exit();
 }
 
 $user = $_SESSION['email'];
@@ -31,7 +36,11 @@ $user = $_SESSION['email'];
         </div>
     </header>
     <main>
-        <p>Je bent ingelogd.</p>
+        <div class="menu">
+            <h1>Welkom</h1>
+            <a href="studentenlijst.php" class="menu-knop">Studentenlijst</a>
+            <a href="#" class="menu-knop">Hardware uitlenen</a>
+        </div>
     </main>
     <footer>
     </footer>

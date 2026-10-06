@@ -2,11 +2,6 @@
 session_start();
 include 'php/db.php';
 
-if (isset($_SESSION['email'])) {
-    header('Location: index.php');
-    exit;
-}
-
 $fout = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -25,9 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['voornaam'] = $gebruiker['voornaam'];
             $_SESSION['achternaam'] = $gebruiker['achternaam'];
             $_SESSION['klascode'] = $gebruiker['klascode'];
-        if ($gebruiker['rol'] == 'docent') {
+            $_SESSION['rol'] = $gebruiker['rol'];
+
             header('Location: index.php');
-        }
             exit;
         }
 
