@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    background-color: #F0F0F7;
+}
+
+.logo-img {
+    width: auto;
+    height: 100px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    box-sizing: border-box;
+}
+
+.uitlog-knop {
+    margin-left: auto;
+}
+
+.uitlog-knop a {
+    text-decoration: none;
+    background-color: #7976B6;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+}
